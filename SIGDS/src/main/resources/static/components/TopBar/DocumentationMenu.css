@@ -1,0 +1,91 @@
+.doc-menu-dropdown {
+    position: absolute;
+    top: 60px; /* Debajo de la barra superior */
+    right: 20px;
+    width: 320px;
+    background: white;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 3000;
+    padding: 15px;
+}
+
+.doc-search-wrapper {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+#docSearchInput {
+    width: 100%;
+    padding: 8px 30px 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.mini-search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    opacity: 0.5;
+}
+
+/* Árbol de capas */
+.doc-layer-item .layer-sub-items {
+    display: none;
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+.doc-layer-item.expanded .layer-sub-items {
+    display: block;
+}
+
+.layer-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    color: #00853e;
+    padding: 5px 0;
+}
+
+.sub-item {
+    padding: 5px 0;
+    font-size: 13px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.sub-item:hover {
+    color: #00853e;
+    text-decoration: underline;
+}
+
+.doc-footer {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#btnHideDoc {
+    background: #ccc;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+.doc-panel {
+    position: absolute;
+    top: 60px;  /* Justo debajo de la barra verde */
+    right: 0;   /* Pegado a la derecha */
+    width: 320px;
+    height: calc(100vh - 60px); /* Que ocupe hasta abajo */
+    background-color: rgba(255, 255, 255, 0.95);
+    border-left: 1px solid #ccc;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    display: none;
+    flex-direction: column;
+    z-index: 4000;
+}

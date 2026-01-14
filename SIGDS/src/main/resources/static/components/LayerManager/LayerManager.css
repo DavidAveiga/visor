@@ -1,0 +1,76 @@
+/* Modal Nueva Capa [cite: 124] */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; z-index: 3000;
+}
+.modal-content {
+    background: white; padding: 20px; border-radius: 15px; width: 350px; border-top: 10px solid #00853e;
+}
+.modal-header { display: flex; justify-content: space-between; margin-bottom: 15px; color: #00853e; }
+
+/* Barra de Edición (Naranja/Amarilla según PDF)  */
+.edit-mode {
+    background-color: #ffcc00 !important; /* Color de edición del PDF */
+}
+.edit-header-info { font-size: 10px; font-weight: bold; text-align: center; color: #333; margin-bottom: 5px; }
+.confirm-btn { background: #000; color: #fff; border: none; padding: 5px; cursor: pointer; border-radius: 5px; font-size: 10px; }
+.cancel-btn { background: transparent; color: #ff0000; border: none; cursor: pointer; font-size: 10px; font-weight: bold; }
+.layer-menu-container {
+    position: absolute;
+    left: 80px; /* Al lado de la Sidebar */
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    width: 280px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 15px rgba(0,0,0,0.2);
+    z-index: 2500;
+    overflow: hidden;
+}
+
+.layer-menu-header {
+    background-color: #00853e;
+    color: white;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.layer-menu-header h4 { margin: 0; font-size: 14px; }
+
+.layers-list {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 10px 0;
+}
+
+.layer-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+}
+
+.layer-item:hover { background-color: #f9f9f9; }
+
+.layer-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #333;
+    font-weight: 500;
+}
+
+.options-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #999;
+}
+
+.options-btn:hover { color: #00853e; }

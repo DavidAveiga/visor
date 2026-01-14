@@ -1,0 +1,35 @@
+.map-controls-panel {
+    position: absolute;
+    bottom: 40px; /* Un poco arriba del borde para no tapar la barra de info */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333; /* Color oscuro del PDF */
+    border-radius: 20px;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.control-btn:hover {
+    color: var(--accent-gold); /* Dorado al pasar el mouse */
+}
+
+.separator {
+    width: 1px;
+    height: 15px;
+    background-color: #666;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGDS - Visor Geográfico</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.4.0/ol.css">
+    
+    <link rel="stylesheet" href="css/global.css">
+    
+    <link rel="stylesheet" href="components/TopBar/TopBar.css">
+    <link rel="stylesheet" href="components/TopBar/DocumentationMenu.css"> <link rel="stylesheet" href="components/Sidebar/Sidebar.css">
+    <link rel="stylesheet" href="components/MapControls/MapControls.css">
+    <link rel="stylesheet" href="components/BottomBar/BottomBar.css">
+    <link rel="stylesheet" href="components/LayerManager/LayerManager.css">
+    <link rel="stylesheet" href="components/MeasureTool/MeasureTool.css">
+</head>
+<body>
+
+    <div id="topbar-container"></div>
+
+    <div id="sidebar-container"></div>
+
+    <div id="layer-list-container" style="display: none;"></div>
+
+    <div id="map" class="map-container"></div>
+
+    <div id="map-controls-container"></div>
+
+    <div id="bottom-bar-container"></div>
+
+    <div id="modals-container"></div>
+    <div id="popup" class="ol-popup">
+    <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+    <div id="popup-content"></div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/ol@v7.4.0/dist/ol.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <script src="../auth/Auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGDS - Acceso</title>
+    <link rel="stylesheet" href="../../css/global.css"> 
+    <link rel="stylesheet" href="../auth/Auth.css">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="login-body">
+    
+    <div class="login-container">
+        <div class="system-header">
+            <h1 class="sigds-title">SIGDS</h1>
+            <h2 class="sigds-subtitle">Sistema de Información Geográfica<br>Para El Desarrollo Sostenible</h2>
+        </div>
+
+        <div class="login-card">
+            <button id="btnVisorDirect" class="visor-btn" title="Entrar sin cuenta">VISOR ➔</button>
+            
+            <form id="loginForm">
+                <div class="input-group">
+                    <img src="../../icons/usuario.svg" alt="user" class="input-icon">
+                    <input type="email" id="email" placeholder="CORREO INSTITUCIONAL" required>
+                </div>
+                
+                <div class="input-group">
+                    <img src="../../icons/candado.svg" alt="lock" class="input-icon">
+                    <input type="password" id="password" placeholder="CONTRASEÑA" required>
+                </div>
+
+                <button type="submit" class="submit-btn">INGRESAR</button>
+            </form>
+
+            <div class="register-section">
+            <span>¿No tienes cuenta?</span>
+             <a href="register.html" class="register-link">REGISTRARSE</a>
+            </div>
+        </div>
+
+        <div class="footer-logo">
+            <img src="../../icons/Logo SIGDSB.svg" alt="Logo SIGDS" style="height: 50px; opacity: 0.8;">
+        </div>
+    </div>
+
+    <div id="registerModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content login-card">
+            <div class="modal-header">
+                <h3>Crear Cuenta</h3>
+                <button id="btnCloseRegister" class="close-btn">&times;</button>
+            </div>
+            <form id="registerForm">
+                <div class="input-group">
+                    <input type="text" id="regName" placeholder="Nombre Completo" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="regEmail" placeholder="Correo Electrónico" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="regPass" placeholder="Contraseña" required>
+                </div>
+                <button type="submit" class="submit-btn register-btn-action">REGISTRARME</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="../auth/Auth.js"></script>
+</body>
+</html>

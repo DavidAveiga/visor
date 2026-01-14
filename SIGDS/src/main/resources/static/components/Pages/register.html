@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGDS - Registro</title>
+    <link rel="stylesheet" href="../../css/global.css"> 
+    <link rel="stylesheet" href="../auth/Auth.css">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="login-body">
+    
+    <div class="login-container">
+        <div class="system-header">
+            <h1 class="sigds-title">SIGDS</h1>
+            <h2 class="sigds-subtitle">Crear Nueva Cuenta</h2>
+        </div>
+
+        <div class="login-card">
+            
+            <form id="registerForm">
+                <div class="input-group">
+                    <img src="../../icons/usuario.svg" alt="user" class="input-icon">
+                    <input type="text" id="regName" placeholder="NOMBRE COMPLETO" required minlength="3">
+                </div>
+
+                <div class="input-group">
+                    <img src="../../icons/usuario.svg" alt="email" class="input-icon">
+                    <input type="email" id="regEmail" placeholder="CORREO INSTITUCIONAL" required>
+                </div>
+                
+                <div class="input-group">
+                    <img src="../../icons/candado.svg" alt="lock" class="input-icon">
+                    <input type="password" id="regPass" placeholder="CONTRASEÑA" required minlength="6">
+                </div>
+
+                <div class="input-group">
+                    <img src="../../icons/candado.svg" alt="lock" class="input-icon">
+                    <input type="password" id="regPassConfirm" placeholder="CONFIRMAR CONTRASEÑA" required minlength="6">
+                </div>
+
+                <button type="submit" class="submit-btn register-btn-action">CREAR CUENTA</button>
+            </form>
+
+            <div class="register-section">
+                <span>¿Ya tienes cuenta?</span>
+                <a href="login.html" class="register-link">INICIAR SESIÓN</a>
+            </div>
+        </div>
+
+        <div class="footer-logo">
+            <img src="../../icons/Logo SIGDSB.svg" alt="Logo SIGDS" style="height: 50px; opacity: 0.8;">
+        </div>
+    </div>
+
+    <script type="module" src="../auth/Auth.js"></script>
+</body>
+</html>

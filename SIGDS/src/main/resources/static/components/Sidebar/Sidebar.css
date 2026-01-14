@@ -1,0 +1,106 @@
+/* Usamos # (ID) porque en index.html es id="sidebar-container" */
+#sidebar-container {
+    position: absolute;
+    left: 20px;
+    top: 50%; /* Centrado vertical */
+    transform: translateY(-50%); 
+    
+    /* Estilo "Píldora" */
+    background-color: var(--primary-color);
+    border-radius: var(--radius-pill);
+    padding: 15px 8px;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: var(--shadow-soft);
+    
+    /* Reset de ancho para ajustarse al contenido */
+    width: auto; 
+    height: auto;
+    bottom: auto; /* Anulamos estilos antiguos si los hubiera */
+}
+
+.tool-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.tool-btn img {
+    width: 24px;
+    height: 24px;
+    /* Filtro para volver blancos los iconos negros */
+    filter: brightness(0) invert(1);
+    transition: all 0.3s ease;
+}
+
+/* Efecto Hover: Círculo blanco, icono verde */
+.tool-btn:hover, .tool-btn.active {
+    background-color: white;
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.tool-btn:hover img, .tool-btn.active img {
+    /* Filtro para volver verde el icono (aproximación al #00853e) */
+    filter: invert(34%) sepia(96%) saturate(1874%) hue-rotate(129deg) brightness(93%) contrast(101%);
+}
+
+/* Barra de búsqueda flotante */
+.search-container {
+    position: absolute;
+    left: 70px; /* A la derecha de los botones */
+    top: 10px;  /* Ajustar según la posición del botón Lupa */
+    background: white;
+    padding: 5px;
+    border-radius: 25px;
+    display: flex;
+    box-shadow: var(--shadow-soft);
+    
+    /* Animación de aparición */
+    opacity: 0;
+    transform: translateX(-20px);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.search-container.show {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+#searchInput {
+    border: none;
+    outline: none;
+    padding: 5px 15px;
+    width: 200px;
+    border-radius: 20px;
+}
+
+.search-go-btn {
+    background: var(--primary-color);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-go-btn img {
+    width: 14px;
+    height: 14px;
+    filter: brightness(0) invert(1);
+}

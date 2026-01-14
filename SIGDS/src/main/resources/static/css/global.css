@@ -1,0 +1,152 @@
+/* --- 1. VARIABLES GLOBALES (Identidad Institucional UTM) --- */
+:root {
+    /* Nuevos colores del diseño PDF */
+    --primary-color: #00853e;    /* Verde Institucional */
+    --secondary-color: #006837;  /* Verde más oscuro */
+    --accent-color: #f1c40f;     /* Dorado/Amarillo */
+    --text-white: #ffffff;
+    --text-dark: #333333;
+    
+    /* Variables de estructura */
+    --panel-bg: rgba(255, 255, 255, 0.95);
+    --shadow-soft: 0 4px 15px rgba(0,0,0,0.2);
+    --radius-pill: 50px;         /* Borde redondeado tipo píldora */
+    --radius-card: 12px;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- 2. RESET BÁSICO --- */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: var(--font-main);
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- 3. EL MAPA (FONDO) --- */
+.map-container {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0; 
+    background-color: #e0e0e0;
+}
+
+/* Ocultar controles nativos de OpenLayers para usar los nuestros */
+.ol-zoom, .ol-attribution {
+    display: none !important;
+}
+
+/* --- 4. GESTIÓN DE CAPAS DE INTERFAZ (Z-INDEX Y CLICS) --- */
+/* Esto es vital para que los botones floten sobre el mapa pero dejen hacer clic en el mapa */
+
+#topbar-container,
+#sidebar-container,
+#map-controls-container,
+#bottom-bar-container,
+#layer-list-container,
+#modals-container {
+    position: absolute;
+    z-index: 2000; /* Encima del mapa */
+    pointer-events: none; /* Deja pasar clics al mapa en las áreas vacías */
+}
+
+/* Reactivar clics DENTRO de los contenedores */
+#topbar-container *,
+#sidebar-container *,
+#map-controls-container *,
+#bottom-bar-container *,
+#layer-list-container *,
+#modals-container * {
+    pointer-events: auto;
+}
+
+/* --- 5. POSICIONAMIENTO DE CONTENEDORES (Layout Principal) --- */
+
+#topbar-container {
+    top: 0; left: 0; width: 100%; height: 60px;
+}
+
+#bottom-bar-container {
+    bottom: 0; left: 0; width: 100%; height: 30px;
+}
+
+/* El Sidebar y MapControls ahora se posicionan en sus propios CSS para ser "flotantes"
+   pero mantenemos referencias base aquí por seguridad */
+
+/* --- 6. ESTILOS DE COMPONENTES COMPARTIDOS --- */
+
+/* Panel de Capas (Layer Manager) - Mantenemos esto para que no desaparezca */
+#layer-list-container {
+    top: 80px;
+    left: 80px; /* A la derecha del sidebar */
+    width: 280px;
+    max-height: 60vh;
+    overflow-y: auto;
+    background: white;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-soft);
+    padding: 10px;
+    display: none; /* JS lo activa */
+}
+
+/* Modales (Overlay oscuro) */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 6000; /* Encima de todo */
+    pointer-events: auto;
+}
+
+/* --- 7. ESTILOS DEL POPUP (OpenLayers) - ¡NO BORRAR! --- */
+.ol-popup {
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+    bottom: 12px;
+    left: -50px;
+    min-width: 280px;
+    z-index: 2000;
+}
+
+.ol-popup:after, .ol-popup:before {
+    top: 100%; border: solid transparent; content: " ";
+    height: 0; width: 0; position: absolute; pointer-events: none;
+}
+
+.ol-popup:after {
+    border-top-color: white; border-width: 10px; left: 48px; margin-left: -10px;
+}
+
+.ol-popup:before {
+    border-top-color: #cccccc; border-width: 11px; left: 48px; margin-left: -11px;
+}
+
+.ol-popup-closer {
+    text-decoration: none; position: absolute; top: 2px; right: 8px; color: #999;
+}
+.ol-popup-closer:after { content: "✖"; }
+
+.attr-table {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+}
+.attr-table td, .attr-table th {
+    border-bottom: 1px solid #eee; padding: 5px; text-align: left;
+}
+.attr-table th { font-weight: bold; color: #555; }

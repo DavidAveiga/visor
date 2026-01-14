@@ -1,0 +1,53 @@
+#topbar-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;  /* OBLIGATORIO: Ocupa todo el ancho */
+    height: 60px;
+    z-index: 2000;
+}
+
+.top-bar {
+    background-color: #00853e; /* Verde Institucional */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-sizing: border-box; /* Evita que el padding rompa el ancho */
+}
+
+.logo-container img {
+    height: 40px; /* Tamaño controlado del logo */
+    margin-top: 5px;
+}
+
+.top-actions {
+    display: flex;
+    gap: 20px;
+    margin-right: 20px;
+}
+
+.nav-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #FFD700; /* Dorado */
+}

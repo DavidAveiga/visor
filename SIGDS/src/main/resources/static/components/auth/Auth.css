@@ -1,0 +1,165 @@
+/* Estilos Generales Login */
+.login-body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); /* Azul Institucional */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.login-container {
+    text-align: center;
+    color: white;
+}
+
+.sigds-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 5px;
+}
+
+.sigds-subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Tarjeta */
+.login-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 320px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Inputs */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    opacity: 0.7;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 12px 12px 45px; /* Espacio para icono */
+    border: none;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    box-sizing: border-box; /* Importante para padding */
+}
+
+/* Botones */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: #00d2ff;
+    color: #004e92;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.submit-btn:hover {
+    transform: scale(1.05);
+    background: #3a7bd5;
+    color: white;
+}
+
+.visor-btn {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid white;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.visor-btn:hover {
+    background: white;
+    color: #1e3c72;
+}
+
+/* Enlace Registro */
+.register-section {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.register-link {
+    background: none;
+    border: none;
+    color: #00d2ff;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex; /* Flex para centrar */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff; /* Fondo blanco para modal */
+    color: #333; /* Texto oscuro */
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+}
+
+/* Override para inputs en modal blanco */
+.modal-content input {
+    background: #f0f0f0;
+    color: #333;
+    padding-left: 15px; /* Sin icono */
+}
+
+.register-btn-action {
+    background: #2a5298;
+    color: white;
+}
